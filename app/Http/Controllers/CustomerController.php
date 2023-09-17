@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\FamilyList;
@@ -116,6 +117,18 @@ class CustomerController extends Controller
     }
 
     public function store(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'cst_name' => 'required',
+            'cst_dob' => 'required',
+            'cst_phoneNum' => 'required',
+            'cst_email' => 'required',
+            'nationality_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator, 400);
+        }
+
         $customer = new Customer;
 
         $customer->cst_name = $request->cst_name;

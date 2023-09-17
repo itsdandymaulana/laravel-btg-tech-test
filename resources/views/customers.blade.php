@@ -124,23 +124,23 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="add-name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="add-name" >
+                    <input type="text" class="form-control" id="add-name" required>
                 </div>
                 <div class="mb-3">
                     <label for="add-dob" class="form-label">Tanggal Lahir</label>
-                    <input type="date" class="form-control" id="add-dob" >
+                    <input type="date" class="form-control" id="add-dob" required>
                 </div>
                 <div class="mb-3">
                     <label for="add-phone" class="form-label">Telepon</label>
-                    <input type="text" class="form-control" id="add-phone" >
+                    <input type="text" class="form-control" id="add-phone" required>
                 </div>
                 <div class="mb-3">
                     <label for="add-email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="add-email" >
+                    <input type="text" class="form-control" id="add-email" required>
                 </div>
                 <div class="mb-3">
                     <label for="add-nat" class="form-label">Kewarganegaraan</label>
-                    <select class="form-select" name="add-nat" id="add-nat">
+                    <select class="form-select" name="add-nat" id="add-nat" required>
                         <option selected disabled>Pilih Kewarganegaraan</option>
                         @foreach ($nationalities as $nat)
                             <option value="{{ $nat->nationality_id }}">{{$nat->nationality_name}} ({{ $nat->nationality_code }})</option>
